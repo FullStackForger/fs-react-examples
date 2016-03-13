@@ -18,8 +18,8 @@ const ParentComponent = React.createClass({
 				<div className="panel-heading">Parent component</div>
 				<div className="panel-body">
 				<ChildComponent childNumber="1"/>
-					<ChildComponent childNumber="2"/>
-					<ChildComponent childNumber="3"/>
+				<ChildComponent childNumber="2"/>
+				<ChildComponent childNumber="3"/>
 				</div>
 			</div>
 		)
