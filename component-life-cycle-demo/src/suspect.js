@@ -11,7 +11,8 @@ const Suspect = React.createClass({
 		highlight('init:getInitialState');
 		return {
 			clicks: 0,
-			rendered: false
+			rendered: false,
+			updatingState: false
 		}
 	},
 
@@ -32,20 +33,33 @@ const Suspect = React.createClass({
 	// methods called during update
 	// -------------------------------
 	componentWillReceiveProps: function () {
-		highlight('prop:componentDidMount');
+		highlight('prop:componentWillReceiveProps');
 	},
 
 	shouldComponentUpdate: function () {
-		highlight('prop:shouldComponentUpdate');
+		if (this.state.updatingState) {
+			highlight('state:shouldComponentUpdate');
+		} else {
+			highlight('prop:shouldComponentUpdate');
+		}
 		return true;
 	},
 
 	componentWillUpdate: function () {
-		highlight('prop:componentWillUpdate');
+		if (this.state.updatingState) {
+			highlight('state:componentWillUpdate');
+		} else {
+			highlight('prop:componentWillUpdate');
+		}
 	},
 
 	componentDidUpdate: function () {
-		highlight('prop:componentDidUpdate');
+		if (this.state.updatingState) {
+			this.state.updatingState = false;
+			highlight('state:componentDidUpdate');
+		} else {
+			highlight('prop:componentDidUpdate');
+		}
 	},
 
 	// -------------------------------
@@ -53,17 +67,23 @@ const Suspect = React.createClass({
 	// -------------------------------
 	handleClick: function () {
 		this.setState({clicks: this.state.clicks+1})
+		this.state.updatingState = true;
 	},
 
 	render: function () {
 		if (!this.state.rendered) {
-			highlight('mount:render');
 			this.state.rendered = true;
+			highlight('mount:render');
+		} else if (this.state.updatingState) {
+			highlight('state:render');
+		} else {
+			highlight('prop:render');
 		}
+
 
 		return (
 			<div>
-				<button onClick={this.handleClick}></button>
+				<button onClick={this.handleClick}>Click me! Clicks: {this.state.clicks}</button>
 			</div>
 		)
 	}
