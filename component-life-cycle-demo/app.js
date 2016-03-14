@@ -80,6 +80,10 @@ const Suspect = React.createClass({
 	},
 
 	render: function () {
+		if (!this.state.rendered) {
+			highlight('mount:render');
+			this.state.rendered = true;
+		}
 
 		return (
 			<div>
