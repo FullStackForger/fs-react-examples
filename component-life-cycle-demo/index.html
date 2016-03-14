@@ -8,7 +8,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../common/css/style.css">
 	<style type="text/css">
-
+		.overview .alert {
+			-webkit-transition: 0.4s ease-in-out;
+			transition: 0.4s ease-in-out;
+		}
+		.overview .alert-info {
+			opacity: 0.5;
+		}
 	</style>
 </head>
 
@@ -28,16 +34,16 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Initialization</div>
 					<div class="panel-body">
-						<div class="alert alert-info" id="i:getDefaultProps">getDefaultProps()</div>
-						<div class="alert alert-info" id="i:getInitialState">getInitialState()</div>
+						<div class="alert alert-info" id="init:getDefaultProps">getDefaultProps()</div>
+						<div class="alert alert-info" id="init:getInitialState">getInitialState()</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading">Mounting</div>
 					<div class="panel-body">
-						<div class="alert alert-info" id="m:componentWillMount">componentWillMount()</div>
-						<div class="alert alert-info" id="m:render">render()</div>
-						<div class="alert alert-info" id="m:componentDidMount">componentDidMount()</div>
+						<div class="alert alert-info" id="mount:componentWillMount">componentWillMount()</div>
+						<div class="alert alert-info" id="mount:render">render()</div>
+						<div class="alert alert-info" id="mount:componentDidMount">componentDidMount()</div>
 					</div>
 				</div>
 			</div>
@@ -45,11 +51,11 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Props change</div>
 					<div class="panel-body">
-						<div class="alert alert-info" id="p:componentWillReceiveProps">componentWillReceiveProps()</div>
-						<div class="alert alert-info" id="p:shouldComponentUpdate">shouldComponentUpdate()</div>
-						<div class="alert alert-info" id="p:componentWillUpdate">componentWillUpdate()</div>
-						<div class="alert alert-info" id="p:render">render()</div>
-						<div class="alert alert-info" id="p:componentDidUpdate">componentDidUpdate()</div>
+						<div class="alert alert-info" id="prop:componentWillReceiveProps">componentWillReceiveProps()</div>
+						<div class="alert alert-info" id="prop:shouldComponentUpdate">shouldComponentUpdate()</div>
+						<div class="alert alert-info" id="prop:componentWillUpdate">componentWillUpdate()</div>
+						<div class="alert alert-info" id="prop:render">render()</div>
+						<div class="alert alert-info" id="prop:componentDidUpdate">componentDidUpdate()</div>
 					</div>
 				</div>
 			</div>
@@ -57,10 +63,10 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">State change</div>
 					<div class="panel-body">
-						<div class="alert alert-info" id="s:shouldComponentUpdate">shouldComponentUpdate()</div>
-						<div class="alert alert-info" id="s:componentWillUpdate">componentWillUpdate()</div>
-						<div class="alert alert-info" id="s:render">render()</div>
-						<div class="alert alert-info" id="s:componentDidUpdate">componentDidUpdate()</div>
+						<div class="alert alert-info" id="state:shouldComponentUpdate">shouldComponentUpdate()</div>
+						<div class="alert alert-info" id="state:componentWillUpdate">componentWillUpdate()</div>
+						<div class="alert alert-info" id="state:render">render()</div>
+						<div class="alert alert-info" id="state:componentDidUpdate">componentDidUpdate()</div>
 					</div>
 				</div>
 				<div class="panel panel-default">
