@@ -9,24 +9,20 @@
 	<link rel="stylesheet" href="../common/css/style.css">
 	<style type="text/css">
 		.overview .alert {
-			-webkit-transition: 0.4s ease-in-out;
-			transition: 0.4s ease-in-out;
+			-webkit-transition: 0.05s ease-in-out;
+			transition: 0.05s ease-in-out;
 		}
 		.overview .alert-info {
 			opacity: 0.5;
+			-webkit-transition: 2s ease-in-out;
+			transition: 2s ease-in-out;
 		}
 	</style>
 </head>
 
 <body>
 
-	<div class="panel panel-default">
-		<div class="panel-heading">Observed component</div>
-		<div class="panel-body">
-			<div id="app"><small><i>Loading component....</i></small></div>
-		</div>
-	</div>
-
+	<div id="app"></div>
 
 	<div class="container-fluid overview">
 		<div class="row">
@@ -79,12 +75,16 @@
 		</div>
 	</div>
 
+
 	<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
 	<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.12.0/babel.min.js"></script>
 
 	<script type="text/babel" src="src/globals.js"></script>
 	<script type="text/babel" src="src/suspect.js"></script>
+	<script type="text/babel" src="src/monitor.js"></script>
+	<script type="text/babel" src="src/app.js"></script>
+
 </body>
 
 </html>

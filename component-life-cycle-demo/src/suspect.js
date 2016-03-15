@@ -1,4 +1,3 @@
-
 const Suspect = React.createClass({
 	// -------------------------------------
 	// methods called during initialization
@@ -82,12 +81,16 @@ const Suspect = React.createClass({
 
 
 		return (
-			<div>
-				<button onClick={this.handleClick}>Click me! Clicks: {this.state.clicks}</button>
+			<div className="panel panel-default">
+				<div className="panel-heading">Suspect</div>
+				<div className="panel-body">
+					<div className="input-group">
+						<label>Total clicks: {this.state.clicks}</label>&nbsp;&nbsp;&nbsp;
+						<button className="btn btn-default" onClick={this.handleClick}>{this.props.label}</button>
+					</div>
+				</div>
 			</div>
 		)
 	}
 
 });
-
-ReactDOM.render( <Suspect />, document.getElementById('app') );

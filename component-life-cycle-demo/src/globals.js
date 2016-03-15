@@ -15,7 +15,7 @@ window.highlight = (function() {
 			el = document.getElementById(highlightId);
 			el.className = el.className.replace('alert-info', 'alert-success');
 		}
-	}, 500);
+	}, 200);
 
 	return function (elementId) {
 		console.log(elementId);
