@@ -8,7 +8,7 @@ const Monitor = React.createClass({
 	render: function () {
 		return (
 			<div className="panel panel-default">
-				<div className="panel-heading">Monitor</div>
+				<div className="panel-heading">component: <strong>Monitor</strong></div>
 				<div className="panel-body">
 					<div className="input-group">
 						<div className="input-group-addon">Button label:</div>

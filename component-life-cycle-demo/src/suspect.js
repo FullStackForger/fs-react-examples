@@ -82,7 +82,7 @@ const Suspect = React.createClass({
 
 		return (
 			<div className="panel panel-default">
-				<div className="panel-heading">Suspect</div>
+				<div className="panel-heading">component: <strong>Suspect</strong></div>
 				<div className="panel-body">
 					<div className="input-group">
 						<label>Total clicks: {this.state.clicks}</label>&nbsp;&nbsp;&nbsp;
