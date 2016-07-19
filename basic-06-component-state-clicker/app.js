@@ -14,7 +14,7 @@ const Clicker = React.createClass({
 			</button>
 		);
 	}
-})
+});
 
 ReactDOM.render(
 	<Clicker label=""/>,
