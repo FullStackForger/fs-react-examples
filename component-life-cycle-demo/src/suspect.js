@@ -29,6 +29,13 @@ const Suspect = React.createClass({
 	},
 
 	// -------------------------------
+	// methods called during unmounting
+	// -------------------------------
+	componentWillUnmount: function () {
+		highlight('unmount:componentWillUnmount');
+	},
+
+	// -------------------------------
 	// methods called during update
 	// -------------------------------
 	componentWillReceiveProps: function () {
