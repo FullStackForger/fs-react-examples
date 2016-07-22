@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>jspm - browser only</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../common/css/style.css">
+</head>
+<body>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Module loaded with JSPM</div>
+	<div class="panel-body">
+		<pre id="app"/>
+	</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.15/system.js"></script>
+<script>
+	System.config({
+		baseURL: './src/',
+		defaultJSExtensions: true
+	});
+
+	System.import('app').then(function (app) {
+		document
+			.getElementById('app')
+			.innerHTML = JSON.stringify(app, null, 2);
+	})
+</script>
+
+</body>
+</html>
