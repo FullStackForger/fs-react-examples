@@ -15,6 +15,8 @@ function userReducer(state = { username: 'guest' }, action) {
 	switch (action.type) {
 		case 'UPDATE':
 			return state = {...state, ...action.payload}
+			// equivalent to:
+			// return state = Object.assign(state, action.payload)
 		default:
 			return state
 	}
