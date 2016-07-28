@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Redux</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../common/css/style.css">
+	<style>
+		.panel-body { padding: 2px; }
+		#logger { color: #888888; padding: 8px; }
+		#logger div { border-bottom: 1px solid #ccc; padding: 5px 2px; font-family: Consolas, Courier; }
+	</style>
+</head>
+<body>
+
+<div id="app"></div>
+<div class="panel panel-default">
+	<div class="panel-heading">Console logs</div>
+	<div class="panel-body">
+	<div id="logger" />
+	</div>
+</div>
+<script src="../common/js/logger.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.15/system.js"></script>
+<script>
+	System.config({
+		baseURL: './',
+		defaultJSExtensions: true,
+		paths: {
+			'redux': 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js',
+			'reduce-reducers': 'https://npmcdn.com/reduce-reducers@0.1.2/lib/index.js'
+		},
+		transpiler: 'Babel',
+		map: {
+			Babel: 'https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js'
+		}
+	});
+
+	System.import('app.js');
+</script>
+
+</body>
+</html>
