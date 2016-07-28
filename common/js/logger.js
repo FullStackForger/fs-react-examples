@@ -8,7 +8,7 @@
 		if (typeof message == 'object') {
 			log = '<pre>' + (JSON && JSON.stringify ? JSON.stringify(message) : message) + '</pre>';
 		} else {
-			log = message;
+			log = message.replace(/\n/, '<br />');
 		}
 
 		logger.innerHTML += `<div>${log}</div>`
