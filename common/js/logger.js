@@ -8,9 +8,13 @@
 		if (typeof message == 'object') {
 			log = '<pre>' + (JSON && JSON.stringify ? JSON.stringify(message) : message) + '</pre>';
 		} else {
-			log = message.replace(/\n/, '<br />');
+			log = message;
 		}
-
+		if (typeof(log) === 'string') {
+			log = log
+				.replace(/\n/g, '<br />')
+				.replace(/\t/g, '&middot;')
+		}
 		logger.innerHTML += `<div>${log}</div>`
 	}
 })();
