@@ -13,14 +13,15 @@ const loggerMiddleware = (store) => (next) => (action) => {
 	next(action)
 }
 
-const store = createStore(counterReducer, 0, applyMiddleware(loggerMiddleware))
+const middleware = applyMiddleware(loggerMiddleware)
+const store = createStore(counterReducer, middleware)
 
 console.log('current state:\n' + store.getState())
 store.subscribe(() => {
 	console.log('current state:\n' + store.getState())
 })
 
-let dispachers = [
+let actions = [
 	{ type: 'INCREMENT' },
 	{ type: 'INCREMENT' },
 	{ type: 'DECREMENT' }
@@ -28,10 +29,10 @@ let dispachers = [
 
 let index = 0;
 let interval = setInterval(() => {
-	if (index < dispachers.length) {
+	if (index < actions.length) {
 
 		// dispatch action
-		store.dispatch(dispachers[index])
+		store.dispatch(actions[index])
 
 		return index++
 	}
