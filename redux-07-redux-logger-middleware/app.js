@@ -13,6 +13,14 @@ const logger = createLogger()
 const middlewares = applyMiddleware(logger)
 const store = createStore(counterReducer, middlewares)
 
+// todo: there appears to be problem with redux-logger, perhaps it will work ok with webpack
+let curr = JSON.stringify(store.getState())
+console.log(`current state: ${curr}`)
+store.subscribe(() => {
+	let curr = JSON.stringify(store.getState())
+	console.log(`current state: ${curr}`)
+})
+
 let dispachers = [
 	{ type: 'INCREMENT', value: 1 },
 	{ type: 'INCREMENT', value: 1 },
