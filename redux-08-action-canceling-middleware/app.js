@@ -15,7 +15,8 @@ const loggerMiddleware = (store) => (next) => (action) => {
 
 const positiveMiddleware = (store) => (next) => (action) => {
 	if (store.getState() == 0 && action.type == 'DECREMENT') {
-		// to cancel action do not call `next(action)`
+
+		// to cancel action simply do not call `next(action)`
 		return console.log('Action cancelled! Negative values not allowed!')
 	}
 	next(action)
@@ -24,8 +25,7 @@ const positiveMiddleware = (store) => (next) => (action) => {
 const middlewares = applyMiddleware(loggerMiddleware, positiveMiddleware)
 const store = createStore(counterReducer, 0, middlewares)
 
-
-let dispachers = [
+const actions = [
 	{ type: 'DECREMENT' },
 	{ type: 'INCREMENT' },
 	{ type: 'DECREMENT' },
@@ -35,10 +35,10 @@ let dispachers = [
 
 let index = 0;
 let interval = setInterval(() => {
-	if (index < dispachers.length) {
+	if (index < actions.length) {
 
 		// dispatch action
-		store.dispatch(dispachers[index])
+		store.dispatch(actions[index])
 
 		return index++
 	}
