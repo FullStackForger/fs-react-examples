@@ -1,0 +1,17 @@
+{
+  "name": "fs-react-examples",
+  "scripts": {
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fullstackforger/fs-react-examples.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fullstackforger/fs-react-examples/issues"
+  },
+  "homepage": "https://github.com/fullstackforger/fs-react-examples#readme",
+  "private": "true"
+}
