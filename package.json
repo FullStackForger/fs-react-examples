@@ -2,7 +2,7 @@
   "name": "fs-react-examples",
   "scripts": {
     "auto-index": "indexifier ./ --extensions .html > index.html",
-    "commit-index": "git c -am \"index.html auto-updated\"",
+    "commit-index": "git c -am \"index.html (auto updated)\"",
     "build": "npm run auto-index && npm run commit-index" 
   },
   "repository": {
